@@ -12,8 +12,8 @@ namespace calculator_CSHARP
     static void Main(string[] args)
     {
       // Inicialización de componentes compartidos de infraestructura y presentación
-      var ui = new InterfazUsuario();
-      var inputManager = new GestorEntrada();
+      var ui = new InterfaceUser();
+      var inputManager = new InputManager();
 
       ui.ShowMainHeader();
 
@@ -46,19 +46,19 @@ namespace calculator_CSHARP
     // Composition Root para trabajar con números enteros.
     // Configura e inyecta todas las dependencias necesarias.
     // Implementa el principio de Inversión de Dependencias (DIP).
-    static void ExecuteWithInt(InterfazUsuario ui, GestorEntrada inputManager)
+    static void ExecuteWithInt(InterfaceUser ui, InputManager inputManager)
     {
         // Capa de Aplicación: Crear validador
-      var validator = new ValidadorNumerico<int>();
+      var validator = new NumericValidator<int>();
       
       // Capa de Dominio: Crear entidad con sus dependencias
-      var list = new ListaNumerica<int>(validator);
+      var list = new NumberedList<int>(validator);
       
       // Capa de Aplicación: Crear servicio de operaciones
-      var operations = new OperacionesInt(validator);
+      var operations = new OperationInt(validator);
       
       // Capa de Presentación: Crear controlador con todas las dependencias
-      var controller = new ControladorInt(list, operations, inputManager, ui);
+      var controller = new ControllerInt(list, operations, inputManager, ui);
       
       ui.ShowSuccess("\n═══ Trabajando con números enteros (int) ═══");
       controller.Execute();
@@ -66,13 +66,13 @@ namespace calculator_CSHARP
 
     // Composition Root para trabajar con números decimales (double).
     // Configura e inyecta todas las dependencias necesarias.
-    static void ExecuteWithDouble(InterfazUsuario ui, GestorEntrada inputManager)
+    static void ExecuteWithDouble(InterfaceUser ui, InputManager inputManager)
     {
       // Inyección de dependencias manual
-      var validator = new ValidadorNumerico<double>();
-      var list = new ListaNumerica<double>(validator);
-      var operations = new OperacionesDouble(validator);
-      var controller = new ControladorDouble(list, operations, inputManager, ui);
+      var validator = new NumericValidator<double>();
+      var list = new NumberedList<double>(validator);
+      var operations = new OperationDouble(validator);
+      var controller = new ControllerDouble(list, operations, inputManager, ui);
       
       ui.ShowSuccess("\n═══ Trabajando con números decimales (double) ═══");
       controller.Execute();
@@ -80,13 +80,13 @@ namespace calculator_CSHARP
 
     // Composition Root para trabajar con números de alta precisión (decimal).
     // Configura e inyecta todas las dependencias necesarias.
-    static void ExecuteWithDecimal(InterfazUsuario ui, GestorEntrada inputManager)
+    static void ExecuteWithDecimal(InterfaceUser ui, InputManager inputManager)
     {
       // Inyección de dependencias manual
-      var validator = new ValidadorNumerico<decimal>();
-      var list = new ListaNumerica<decimal>(validator);
-      var operations = new OperacionesDecimal(validator);
-      var controller = new ControladorDecimal(list, operations, inputManager, ui);
+      var validator = new NumericValidator<decimal>();
+      var list = new NumberedList<decimal>(validator);
+      var operations = new OperationDecimal(validator);
+      var controller = new ControllerDecimal(list, operations, inputManager, ui);
       
       ui.ShowSuccess("\n═══ Trabajando con números precisos (decimal) ═══");
       controller.Execute();

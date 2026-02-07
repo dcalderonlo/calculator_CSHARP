@@ -14,7 +14,7 @@ namespace OperationMath.Domain.Interfaces
     T Multiply(T a, T b);
 
     // Divide dos números.
-    // Se lanza cuando el divisor es cero
+    // Se lanza una excepción cuando el divisor es cero
     T Divide(T a, T b);
   }
 }

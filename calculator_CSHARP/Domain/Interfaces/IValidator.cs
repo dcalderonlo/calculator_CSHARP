@@ -9,7 +9,7 @@ namespace calculator_CSHARP.Domain.Interfaces
     void ValidateSufficientList(int count);
 
     // Valida que el divisor no sea cero antes de realizar una división.
-    // Se lanza cuando el divisor es cero o muy cercano a cero
+    // Se lanza una excepción cuando el divisor es cero o muy cercano a cero
     void ValidateDivisionByZero(T divisor);
   }
 }
