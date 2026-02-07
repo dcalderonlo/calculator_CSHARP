@@ -10,7 +10,7 @@ namespace calculator_CSHARP.Presentation.Controllers
     IListOperations<double> list,
     IMathOperations<double> operations,
     InputManager inputManager,
-    InterfaceUser ui) : ControllerBase<double>(list, operations, inputManager, ui), ControllerBase<double>
+    InterfaceUser ui) : ControllerBase<double>(list, operations, inputManager, ui)
   {
     protected override string GetInputMessage()
     {

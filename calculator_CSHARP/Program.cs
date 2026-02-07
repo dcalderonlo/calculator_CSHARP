@@ -22,7 +22,7 @@ namespace calculator_CSHARP
       while (!exit)
       {
         ui.ShowMainMenu();
-        int option = inputManager.ReadOption("\nSeleccione el tipo de dato: ", 1, 4);
+          int option = inputManager.ReadOption("\nSeleccione el tipo de dato: ", 1, 4);
 
         switch (option)
         {

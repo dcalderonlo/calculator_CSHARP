@@ -10,12 +10,12 @@ namespace calculator_CSHARP.Application.Services
     private const int MinimumNumberItems = 2;
 
     // Valida que la lista contenga al menos 2 elementos.
-    // Se lanza un InsufficientExecutionStackException cuando la cantidad es menor a 2
+    // Se lanza un InsufficientListException cuando la cantidad es menor a 2
     public void ValidateSufficientList(int cantidad)
     {
         if (cantidad < MinimumNumberItems)
         {
-          throw new InsufficientExecutionStackException(
+          throw new InsufficientListException(
             $"La lista debe contener al menos {MinimumNumberItems} números para realizar una operación.");
         }
     }

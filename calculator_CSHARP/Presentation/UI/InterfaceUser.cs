@@ -1,11 +1,11 @@
-namespace OperacionesMatematicas.Presentation.UI
+namespace calculator_CSHARP.Presentation.UI
 {
   // Componente de presentación responsable de toda la interfaz visual.
   // Abstrae los detalles de visualización de la lógica de aplicación.
   public class InterfaceUser
   {
     // Muestra el menú principal del sistema.
-    public static void ShowMainMenu()
+    public void ShowMainMenu()
     {
       Console.WriteLine("\n╔══════════════════════════════════════════╗");
       Console.WriteLine("║   SISTEMA DE OPERACIONES MATEMÁTICAS     ║");
@@ -14,10 +14,11 @@ namespace OperacionesMatematicas.Presentation.UI
       Console.WriteLine("2. Trabajar con números decimales (double)");
       Console.WriteLine("3. Trabajar con números precisos (decimal)");
       Console.WriteLine("4. Salir");
+      Console.Write("\nSeleccione una opción (1-4): ");
     }
 
     // Muestra el menú de operaciones.
-    public static void ShowOperationsMenu()
+    public void ShowOperationsMenu()
     {
       Console.WriteLine("\n╔═══════════ MENÚ DE OPERACIONES ══════════╗");
       Console.WriteLine("║ 1. Agregar número                        ║");
@@ -29,16 +30,17 @@ namespace OperacionesMatematicas.Presentation.UI
       Console.WriteLine("║ 7. Limpiar lista                         ║");
       Console.WriteLine("║ 8. Volver al menú principal              ║");
       Console.WriteLine("╚══════════════════════════════════════════╝");
+      Console.Write("\nSeleccione una opción (1-8): ");
     }
 
     // Muestra los mensajes informativos.
-    public static void ShowMessage(string message)
+    public void ShowMessage(string message)
     {
       Console.WriteLine(message);
     }
 
     // Muestra los mensajes de error en color rojo.
-    public static void ShowError(string message)
+    public void ShowError(string message)
     {
       Console.ForegroundColor = ConsoleColor.Red;
       Console.WriteLine($"✗ {message}");
@@ -46,7 +48,7 @@ namespace OperacionesMatematicas.Presentation.UI
     }
 
     // Muestra los mensajes de éxito en color verde.
-    public static void ShowSuccess(string message)
+    public void ShowSuccess(string message)
     {
       Console.ForegroundColor = ConsoleColor.Green;
       Console.WriteLine($"✓ {message}");
@@ -54,19 +56,19 @@ namespace OperacionesMatematicas.Presentation.UI
     }
 
     // Muestra el encabezado principal de la aplicación.
-    public static void ShowMainHeader()
+    public void ShowMainHeader()
     {
       Console.Clear();
       Console.WriteLine("╔════════════════════════════════════════════════════════════╗");
-      Console.WriteLine("║           SISTEMA DE OPERACIONES MATEMÁTICAS               ║");
+      Console.WriteLine("║             SISTEMA DE OPERACIONES MATEMÁTICAS             ║");
       Console.WriteLine("╚════════════════════════════════════════════════════════════╝");
     }
 
     // Muestra el mensaje de despedida al usuario.
-    public static void ShowGoodbye()
+    public void ShowGoodbye()
     {
       Console.WriteLine("\n╔════════════════════════════════════════════════════════════╗");
-      Console.WriteLine("║             ¡Gracias por usar el sistema!                   ║");
+      Console.WriteLine("║               ¡Gracias por usar el sistema!                ║");
       Console.WriteLine("╚════════════════════════════════════════════════════════════╝");
     }
   }

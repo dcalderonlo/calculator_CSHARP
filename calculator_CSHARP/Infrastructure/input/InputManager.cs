@@ -6,14 +6,14 @@ namespace calculator_CSHARP.Infrastructure.Input
   {
     // Lee un número del usuario con validación automática y manejo de errores.
     // Continúa solicitando entrada hasta recibir un valor válido.
-    public static T ReadNumber<T>(string message) where T : struct, IComparable, IConvertible
+    public T ReadNumber<T>(string message) where T : struct, IComparable, IConvertible
     {
       while (true)
       {
         try
         {
           Console.Write(message);
-          string input = Console.ReadLine();
+          string input = Console.ReadLine() ?? throw new InvalidOperationException("Input cannot be null");
           return (T)Convert.ChangeType(input, typeof(T));
         }
         catch (FormatException)
@@ -32,14 +32,22 @@ namespace calculator_CSHARP.Infrastructure.Input
     }
 
     // Lee una opción numérica del menú con validación de rango.
-    public static int ReadOption(string message, int min, int max)
+    public int ReadOption(string message, int min, int max)
     {
       while (true)
       {
         try
         {
-          Console.Write(message);
-          int option = int.Parse(Console.ReadLine());
+          // Console.Write(message);
+          // string input = Console.ReadLine() ?? throw new InvalidOperationException("Input cannot be null");
+          string input = Console.ReadLine() ?? string.Empty;
+                    if (string.IsNullOrWhiteSpace(input))
+                    {
+                        Console.WriteLine("Error: No se permiten entradas vacías.");
+                        continue;
+                    }
+          
+          int option = int.Parse(input);
           
           if (option >= min && option <= max)
             return option;

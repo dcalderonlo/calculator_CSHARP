@@ -1,4 +1,4 @@
-namespace OperationMath.Domain.Interfaces
+namespace calculator_CSHARP.Domain.Interfaces
 {
   // Define las operaciones matemáticas básicas que se pueden realizar entre dos números.
   // Representa el comportamiento matemático del dominio.

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using calculator_CSHARP.Domain.Delegates;
 using calculator_CSHARP.Domain.Interfaces;
 

@@ -10,13 +10,13 @@ namespace calculator_CSHARP.Application.Services
     private readonly IValidator<double> _validator = validator ?? throw new ArgumentNullException(nameof(validator));
 
     /// Suma dos números de punto flotante.
-    public static double Add(double a, double b) => a + b;
+    public double Add(double a, double b) => a + b;
 
     /// Resta dos números de punto flotante.
-    public static double Subtract(double a, double b) => a - b;
+    public double Subtract(double a, double b) => a - b;
 
     /// Multiplica dos números de punto flotante.
-    public static double Multiply(double a, double b) => a * b;
+    public double Multiply(double a, double b) => a * b;
 
     /// Divide dos números de punto flotante con validación.
     /// Se lanza una excepción cuando el divisor es cero o muy cercano a cero

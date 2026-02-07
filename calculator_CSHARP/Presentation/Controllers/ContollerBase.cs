@@ -94,7 +94,7 @@ namespace calculator_CSHARP.Presentation.Controllers
     }
 
     // Realiza la operación matemática utilizando el patrón Strategy (delegado).
-    protected virtual void PerformOperation(calculator_CSHARP<T> operation, string operationName)
+    protected virtual void PerformOperation(OperationMath<T> operation, string operationName)
     {
       T result = _list.PerformOperation(operation);
       _ui.ShowSuccess($"Resultado de la {operationName}: {FormatNumber(result)}");
@@ -103,7 +103,7 @@ namespace calculator_CSHARP.Presentation.Controllers
     // Muestra todos los números de la lista actual.
     protected virtual void ShowList()
     {
-      var numbers = ((numberedList<T>)_list).GetNumbers();
+      var numbers = ((NumberedList<T>)_list).GetNumbers();
       if (numbers.Count == 0)
       {
         _ui.ShowMessage("La lista está vacía.");

@@ -10,13 +10,13 @@ namespace calculator_CSHARP.Application.Services
     private readonly IValidator<decimal> _validator = validator ?? throw new ArgumentNullException(nameof(validator));
 
     // Suma dos números decimales con alta precisión.
-    public static decimal Add(decimal a, decimal b) => a + b;
+    public decimal Add(decimal a, decimal b) => a + b;
 
     // Resta dos números decimales con alta precisión.
-    public static decimal Subtract(decimal a, decimal b) => a - b;
+    public decimal Subtract(decimal a, decimal b) => a - b;
 
     // Multiplica dos números decimales con alta precisión.
-    public static decimal Multiply(decimal a, decimal b) => a * b;
+    public decimal Multiply(decimal a, decimal b) => a * b;
 
     // Divide dos números decimales con alta precisión y validación.
     // Se lanza una excepción cuando el divisor es cero o muy cercano a cero
