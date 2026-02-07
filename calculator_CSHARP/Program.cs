@@ -1,10 +1,10 @@
-﻿using OperationMath.Domain.Entities;
-using OperationMath.Application.Services;
-using OperationMath.Infrastructure.Input;
-using OperationMath.Presentation.Controllers;
-using OperationMath.Presentation.UI;
+﻿using calculator_CSHARP.Domain.Entities;
+using calculator_CSHARP.Application.Services;
+using calculator_CSHARP.Infrastructure.Input;
+using calculator_CSHARP.Presentation.Controllers;
+using calculator_CSHARP.Presentation.UI;
 
-namespace OperationMath
+namespace calculator_CSHARP
 {
   // Implementa el patrón Composition Root para la inyección de dependencias manual.
   class Program

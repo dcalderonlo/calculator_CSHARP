@@ -1,11 +1,11 @@
-using OperationMath.Domain.Delegates;
-using OperationMath.Domain.Exceptions;
-using OperationMath.Domain.Interfaces;
-using OperationMath.Domain.Entities;
-using OperationMath.Infrastructure.Input;
-using OperationMath.Presentation.UI;
+using calculator_CSHARP.Domain.Delegates;
+using calculator_CSHARP.Domain.Exceptions;
+using calculator_CSHARP.Domain.Interfaces;
+using calculator_CSHARP.Domain.Entities;
+using calculator_CSHARP.Infrastructure.Input;
+using calculator_CSHARP.Presentation.UI;
 
-namespace OperationMath.Presentation.Controllers
+namespace calculator_CSHARP.Presentation.Controllers
 {
   // Controlador base que implementa el patrón Template Method.
   // Coordina la interacción entre las capas de dominio, aplicación y presentación.
@@ -94,7 +94,7 @@ namespace OperationMath.Presentation.Controllers
     }
 
     // Realiza la operación matemática utilizando el patrón Strategy (delegado).
-    protected virtual void PerformOperation(OperationMath<T> operation, string operationName)
+    protected virtual void PerformOperation(calculator_CSHARP<T> operation, string operationName)
     {
       T result = _list.PerformOperation(operation);
       _ui.ShowSuccess($"Resultado de la {operationName}: {FormatNumber(result)}");

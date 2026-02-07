@@ -1,8 +1,8 @@
-using OperationMath.Domain.Interfaces;
-using OperationMath.Infrastructure.Input;
-using OperationMath.Presentation.UI;
+using calculator_CSHARP.Domain.Interfaces;
+using calculator_CSHARP.Infrastructure.Input;
+using calculator_CSHARP.Presentation.UI;
 
-namespace OperationMath.Presentation.Controllers
+namespace calculator_CSHARP.Presentation.Controllers
 {
   // Controlador especializado para operaciones con números de alta precisión.
   // Implementa los hook methods del Template Method con comportamiento específico para decimal.

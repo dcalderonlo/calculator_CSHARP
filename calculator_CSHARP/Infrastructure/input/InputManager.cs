@@ -1,4 +1,4 @@
-namespace OperationMath.Infrastructure.Input
+namespace calculator_CSHARP.Infrastructure.Input
 {
   // Servicio responsable de gestionar la entrada de datos del usuario.
   // Abstrae los detalles de implementación de la entrada (consola, archivo, API, etc).
